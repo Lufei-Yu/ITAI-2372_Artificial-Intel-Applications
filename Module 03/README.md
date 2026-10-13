@@ -27,24 +27,6 @@ The app uses `sklearn.datasets.load_breast_cancer`, which distributes the Wiscon
 - StandardScaler
 - Train/test split and classification metrics
 
-## Run locally
-1. Install Python 3.10 or newer.
-2. Download or clone this repository.
-3. Open a terminal in the project folder.
-4. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-5. Start the app:
-
-   ```bash
-   streamlit run app.py
-   ```
-
-6. Open the local URL printed by Streamlit in your browser.
-
 ## Run in Google Colab
 You can install the requirements in a Colab cell, but Streamlit needs a tunnel or a hosting service to display its web interface. The simplest option is to run it locally or deploy it using Streamlit Community Cloud after uploading the repository to GitHub.
 
