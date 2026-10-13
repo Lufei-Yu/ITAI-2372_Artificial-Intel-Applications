@@ -28,7 +28,7 @@ The app uses `sklearn.datasets.load_breast_cancer`, which distributes the Wiscon
 - Train/test split and classification metrics
 
 ## Run in Google Colab
-You can install the requirements in a Colab cell, but Streamlit needs a tunnel or a hosting service to display its web interface. The simplest option is to run it locally or deploy it using Streamlit Community Cloud after uploading the repository to GitHub...
+You can install the requirements in a Colab cell, but Streamlit needs a tunnel or a hosting service to display its web interface. The simplest option is to run it locally or deploy it using Streamlit Community Cloud after uploading the repository to GitHub.
 
 
 ## Limitations and responsible AI
