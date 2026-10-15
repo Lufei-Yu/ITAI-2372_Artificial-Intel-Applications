@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Insights App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">FINANCE • NLP • AI</p>
+      <h1>Finance Insights</h1>
+      <p class="subtitle">Analyze financial text, check its predicted sentiment, and generate a concise summary.</p>
+    </header>
+
+    <form method="POST" class="panel">
+      <label for="user_text">Financial article or headline</label>
+      <textarea id="user_text" name="user_text" rows="8" required
+        placeholder="Paste a financial news article or headline here...">{{ user_text }}</textarea>
+      <label for="question">Ask a question (optional)</label>
+      <input id="question" name="question" value="{{ question }}"
+        placeholder="What risks does the article mention?">
+      <button type="submit">Analyze text</button>
+      <p class="hint">Demo only: use public text and do not enter private financial information.</p>
+    </form>
+
+    {% if sentiment %}
+    <section class="results">
+      <h2>Analysis results</h2>
+      <div class="result-grid">
+        <article class="result-card">
+          <h3>Predicted sentiment</h3>
+          <p class="sentiment {{ sentiment|lower }}">{{ sentiment }}</p>
+          <p class="small">Predicted by a TF-IDF + Naive Bayes model trained on the included sample dataset.</p>
+        </article>
+        <article class="result-card">
+          <h3>Summary</h3>
+          <p>{{ summary }}</p>
+          {% if llm_status %}<p class="small">Generation method: {{ llm_status }}</p>{% endif %}
+        </article>
+      </div>
+      {% if answer %}
+      <article class="result-card question-card">
+        <h3>Answer to your question</h3>
+        <p>{{ answer }}</p>
+      </article>
+      {% endif %}
+      <details>
+        <summary>View cleaned text used for sentiment analysis</summary>
+        <p>{{ cleaned_preview }}</p>
+      </details>
+    </section>
+    {% endif %}
+
+    <footer>
+      <strong>Important:</strong> This prototype is for educational and informational purposes only.
+      Sentiment labels and generated summaries can be inaccurate. It is not investment advice and
+      should not be used alone to make financial decisions.
+    </footer>
+  </main>
+</body>
+</html>
