@@ -34,13 +34,14 @@ source venv/bin/activate
 
 4. Install dependencies:
 
-pip install -r requirements.txt
+
+   `pip install -r requirements.txt`
 
 ## Running the Application
 
 1. Start the Flask server:
 
-python app.py
+   `python app.py`
 
 2. Open your browser and navigate to:http://127.0.0.1:5000/
 
