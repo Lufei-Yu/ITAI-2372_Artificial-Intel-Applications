@@ -19,17 +19,6 @@ Users enter a product name, comma-separated keywords, and a writing tone.
 - `templates/index.html` — web form and output display
 - `requirements.txt` — dependencies
 
-## Project Structure
-
-```text
-Module 06/
-│
-├── app.py                      # Flask routes and core LLM generation logic
-├── AI_Product_Description.ipynb # Google Colab/Jupyter notebook version
-├── requirements.txt            # Project dependencies
-├── README.md                   # Project documentation
-└── templates/
-    └── index.html              # Frontend web form and output display
 
 ## Installation & Setup
 1. Clone or download the repository to your local machine.
