@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Product Description Generator</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 36px 16px; background: #f4f6fa;
+      color: #202633; font-family: Arial, Helvetica, sans-serif;
+    }
+    main {
+      max-width: 760px; margin: auto; padding: 32px;
+      background: white; border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(30,45,70,.08);
+    }
+    h1 { margin-top: 0; }
+    .intro { color: #596579; line-height: 1.5; }
+    label { display: block; margin: 20px 0 8px; font-weight: bold; }
+    input, select {
+      width: 100%; padding: 12px 13px; border: 1px solid #cbd2df;
+      border-radius: 8px; font-size: 16px; background: white;
+    }
+    button {
+      margin-top: 24px; padding: 13px 20px; border: 0; border-radius: 8px;
+      background: #285fce; color: white; font-size: 16px;
+      font-weight: bold; cursor: pointer;
+    }
+    button:hover { background: #1e4eae; }
+    .result, .error, .notice {
+      margin-top: 26px; padding: 18px; border-radius: 10px; line-height: 1.6;
+    }
+    .result { background: #f0f6ff; border: 1px solid #c8dcff; }
+    .error { background: #fff1f0; border: 1px solid #ffc9c5; color: #8f2018; }
+    .notice { background: #fff9e8; border: 1px solid #f0dfa7; color: #65511a; }
+    .small { color: #6b7483; font-size: 13px; margin-top: 18px; }
+    @media (max-width: 520px) { main { padding: 22px; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>AI Product Description Generator</h1>
+  <p class="intro">
+    Create a product description for an online store. Enter a product name,
+    add keywords, and choose a writing tone.
+  </p>
+
+  <form method="POST" action="/">
+    <label for="product_name">Product Name</label>
+    <input type="text" id="product_name" name="product_name"
+           placeholder="Example: Leather ankle boots"
+           value="{{ product_name }}" maxlength="150" required>
+
+    <label for="keywords">Keywords (separate with commas)</label>
+    <input type="text" id="keywords" name="keywords"
+           placeholder="Example: durable, stylish, comfortable"
+           value="{{ keywords }}" maxlength="500" required>
+
+    <label for="tone">Writing Tone</label>
+    <select id="tone" name="tone">
+      <option value="neutral" {% if tone == "neutral" %}selected{% endif %}>Neutral</option>
+      <option value="formal" {% if tone == "formal" %}selected{% endif %}>Formal</option>
+      <option value="casual" {% if tone == "casual" %}selected{% endif %}>Casual</option>
+      <option value="humorous" {% if tone == "humorous" %}selected{% endif %}>Humorous</option>
+      <option value="for young adults" {% if tone == "for young adults" %}selected{% endif %}>For Young Adults</option>
+      <option value="for professionals" {% if tone == "for professionals" %}selected{% endif %}>For Professionals</option>
+    </select>
+
+    <button type="submit">Generate Description</button>
+  </form>
+
+  {% if error %}
+    <section class="error" role="alert"><strong>Error:</strong> {{ error }}</section>
+  {% endif %}
+
+  {% if description %}
+    <section class="result" aria-live="polite">
+      <h2>Generated Product Description</h2>
+      {{ description }}
+    </section>
+    <p class="notice">
+      Review the generated text before publishing. AI may produce inaccurate
+      or unsupported product claims.
+    </p>
+  {% endif %}
+
+  <p class="small">Model: {{ model_name }} · Hugging Face Transformers</p>
+</main>
+</body>
+</html>
