@@ -23,5 +23,3 @@ Users enter a product name, comma-separated keywords, and a writing tone.
 
 The first run downloads the GPT-2 model and may take several minutes. An internet connection is needed for the initial download.
 
-## Notes
-The default model is `gpt2`. You can set the `MODEL_NAME` environment variable to another compatible Hugging Face text-generation model. Review all generated product claims before publishing. This demo uses Flask debug mode for local testing only; disable it for deployment.
