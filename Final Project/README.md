@@ -107,4 +107,10 @@ Open the local URL printed in your terminal (usually `http://localhost:8501`).
 
 ## Learning outcomes
 
-This project demonstrates Generative AI integration, prompt engineering, structured LLM outputs, document processing, Python development, and interactive application design.
+- Gained hands-on experience building an AI-powered study application using Python.
+- Learned to integrate the OpenAI API for AI-generated summaries, flashcards, and quizzes.
+- Developed skills in PDF text extraction and document processing.
+- Practiced using structured data models with Pydantic.
+- Improved understanding of Natural Language Processing (NLP) and Generative AI.
+- Learned to build interactive web applications using Streamlit.
+- Explored adaptive learning techniques to personalize quiz difficulty based on user performance.
