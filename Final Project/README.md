@@ -1,6 +1,16 @@
-# 📚 Smart Study Guide & Practice Quiz Generator
+#  Smart Study Guide & Practice Quiz Generator
 
-An AI-powered study application that turns lecture notes and text-based PDFs into structured summaries, flashcards, and multiple-choice quizzes with answer explanations.
+## Project Overview
+
+The Smart Study Guide & Practice Quiz Generator is an AI-powered educational application designed to help students improve their learning efficiency, knowledge retention, and exam preparation through intelligent study material generation.
+
+Traditional studying often involves reviewing lengthy lecture notes, textbook chapters, academic articles, and PDF documents. This process can be time-consuming and inefficient, especially when students need to identify important concepts, understand complex topics, and prepare for examinations.
+
+This project addresses these challenges by integrating Generative Artificial Intelligence (GenAI), Natural Language Processing (NLP), and Large Language Models (LLMs) into an interactive study platform. The application transforms unstructured educational content into organized, personalized, and interactive learning resources.
+
+Students can upload course materials in PDF format or paste their lecture notes directly into the application. The AI engine processes the provided content and generates structured study summaries, question-and-answer flashcards, and multiple-choice practice quizzes. Each quiz includes detailed explanations that help students understand why an answer is correct and why alternative answers are incorrect.
+
+The application also incorporates an adaptive learning mechanism that evaluates quiz performance and recommends an appropriate difficulty level for subsequent practice sessions. This encourages students to progressively strengthen their understanding and focus on areas that require additional review.
 
 ## Features
 
@@ -14,26 +24,17 @@ An AI-powered study application that turns lecture notes and text-based PDFs int
 
 ## Technology stack
 
-- Python
-- Streamlit
-- OpenAI API (Responses API with structured outputs)
-- PyPDF2
-- Pydantic
-- python-dotenv
+| Technology | Application |
+|---|---|
+| Python | Core application development and processing logic |
+| Streamlit | Interactive web-based user interface |
+| OpenAI API | Large Language Model integration and content generation |
+| PyPDF2 | PDF document text extraction |
+| Pydantic | Structured output validation and data modeling |
+| python-dotenv | Secure API key configuration |
+| Generative AI | Automated summaries, flashcards, and quiz generation |
+| Natural Language Processing | Understanding and transforming educational text |
 
-## Project structure
-
-```text
-Smart-Study-Guide-Quiz-Generator/
-├── app.py
-├── ai_engine.py
-├── pdf_processor.py
-├── requirements.txt
-├── .env.example
-├── .gitignore
-├── README.md
-└── generated/
-```
 
 ## Setup
 
